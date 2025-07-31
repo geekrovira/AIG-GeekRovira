@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA Generativa - Introducción</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c; /* Dark background, similar to Hack The Box / Mr. Robot */
+            color: #e2e8f0; /* Light grey text */
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            font-family: 'Roboto Mono', monospace; /* Monospaced font for headings */
+            color: #48bb78; /* Green accent color */
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .card {
+            background-color: #2d3748; /* Slightly lighter dark for cards */
+            border-radius: 0.75rem; /* Rounded corners */
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 1px solid #4a5568; /* Subtle border */
+        }
+        .quiz-option {
+            background-color: #4a5568;
+            color: #e2e8f0;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.75rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .quiz-option:hover {
+            background-color: #6a768e;
+        }
+        .quiz-option.correct {
+            background-color: #38a169; /* Green for correct answer */
+            color: white;
+        }
+        .quiz-option.incorrect {
+            background-color: #e53e3e; /* Red for incorrect answer */
+            color: white;
+        }
+        .quiz-explanation {
+            background-color: #2c5282; /* Blue for explanation */
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            display: none; /* Hidden by default */
+        }
+        .quiz-explanation.show {
+            display: block;
+        }
+        .image-caption {
+            font-style: italic;
+            font-size: 0.875rem;
+            color: #a0aec0;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+        .quiz-button {
+            background-color: #48bb78;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .quiz-button:hover {
+            background-color: #38a169;
+        }
+    </style>
+</head>
+<body class="p-8">
+    <div class="container">
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-bold mb-4">IA Generativa: Hack the AI</h1>
+            <p class="text-xl text-gray-400">// Sección 01: Introducción</p>
+        </header>
+
+        <section class="card">
+            <h2 class="text-3xl font-semibold mb-4">¿Qué es la Inteligencia Artificial Generativa (IAG)?</h2>
+            <p class="mb-4">La Inteligencia Artificial Generativa (IAG) se refiere a sistemas capaces de crear contenido que imita o se aproxima a la habilidad humana. Estos sistemas han causado un gran impacto en la sociedad, especialmente los Modelos de Lenguaje Grandes (LLMs).</p>
+            <p class="mb-4">Existen diversas técnicas dentro de la IAG, como las Redes Generativas Antagónicas (GANs), los Autoencoders Variacionales (VAEs), los Modelos de Difusión (DMs) y los ya mencionados Modelos de Lenguaje Grandes (LLMs).</p>
+            <p class="mb-4">La IAG nos permite generar una amplia gama de contenidos, incluyendo imágenes, videos, audios y texto.</p>
+        </section>
+
+        <section class="card">
+            <h2 class="text-3xl font-semibold mb-4">Modelos de Lenguaje Grandes (LLMs)</h2>
+            <p class="mb-4">Los LLMs son modelos de procesamiento de lenguaje general, diseñados para generar texto coherente y contextualmente relevante. Han sido entrenados utilizando billones de palabras, lo que les permite comprender y producir lenguaje de manera muy sofisticada.</p>
+            <p class="mb-4">Dentro de esta disciplina, existen los "LLMs Foundation", que son los modelos base más avanzados. Algunos de los más populares incluyen ChatGPT, Gemini, LLaMA, Claude y DeepSeek.</p>
+        </section>
+
+        <section class="card">
+            <h2 class="text-3xl font-semibold mb-4">Funcionamiento de un LLM</h2>
+            <p class="mb-4">Un LLM recibe como entrada instrucciones en lenguaje natural, a las que llamamos <strong class="text-green-400">"Prompt"</strong>.</p>
+            <p class="mb-4">El prompt siempre tiene un tamaño máximo permitido, conocido como <strong class="text-green-400">"Context Window"</strong>. Este tamaño varía según el modelo de LLM que se esté utilizando.</p>
+            <div class="flex justify-center mb-4">
+                <img src="uno.png" alt="Imagen de un cuadro de texto para prompt" class="rounded-lg shadow-lg max-w-full h-auto">
+            </div>
+            <p class="image-caption">Cuadro de texto donde se inserta el prompt para iniciar el proceso.</p>
+            <p class="mb-4">Una vez que el prompt es ingresado, el modelo comienza a generar texto palabra por palabra, y así sucesivamente, hasta que considera que ha producido una respuesta completa y correcta. Este proceso se denomina <strong class="text-green-400">"Inferencia"</strong>.</p>
+            <div class="flex justify-center mb-4">
+                <img src="dos.png" alt="Imagen que muestra el proceso de inferencia de un LLM" class="rounded-lg shadow-lg max-w-full h-auto">
+            </div>
+            <p class="image-caption">Representación visual del proceso de inferencia de un LLM.</p>
+            <p class="mb-4">El resultado final de este proceso se conoce como <strong class="text-green-400">"Completion"</strong> (finalización).</p>
+            <p class="mb-4">Es crucial recordar que la <strong class="text-green-400">Context Window</strong> tiene un límite de texto permitido, lo que significa que no se puede ingresar una cantidad ilimitada de información en el prompt.</p>
+        </section>
+
+        <section class="card">
+            <h2 class="text-3xl font-semibold mb-4">Cuestionario: Introducción a la IA Generativa</h2>
+            <div id="quiz-container">
+                <!-- Pregunta 1 -->
+                <div class="quiz-question mb-6" data-question-id="1">
+                    <p class="text-lg font-semibold mb-3">1. ¿Cuál es el principal impacto que los LLMs están causando en la sociedad?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-answer="a">a) La creación de bases de datos masivas.</div>
+                        <div class="quiz-option" data-answer="b">b) La generación de contenido que imita la habilidad humana.</div>
+                        <div class="quiz-option" data-answer="c">c) La optimización de algoritmos de búsqueda.</div>
+                    </div>
+                    <div class="quiz-explanation" data-explanation-for="1" data-correct-answer="b">
+                        <p><strong>Explicación:</strong> Los LLMs, como parte de la IA Generativa, son conocidos por su capacidad de crear contenido (texto, imágenes, etc.) que se asemeja al producido por humanos, lo que ha generado un gran impacto.</p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="quiz-question mb-6" data-question-id="2">
+                    <p class="text-lg font-semibold mb-3">2. ¿Qué nombre recibe la instrucción en lenguaje natural que se le da a un LLM?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-answer="a">a) Output</div>
+                        <div class="quiz-option" data-answer="b">b) Completion</div>
+                        <div class="quiz-option" data-answer="c">c) Prompt</div>
+                    </div>
+                    <div class="quiz-explanation" data-explanation-for="2" data-correct-answer="c">
+                        <p><strong>Explicación:</strong> El "Prompt" es la entrada de texto que el usuario proporciona al LLM para indicarle qué tarea debe realizar o qué contenido debe generar.</p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div class="quiz-question mb-6" data-question-id="3">
+                    <p class="text-lg font-semibold mb-3">3. ¿Cómo se denomina el proceso en el que un LLM genera texto palabra por palabra?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-answer="a">a) Entrenamiento</div>
+                        <div class="quiz-option" data-answer="b">b) Inferencia</div>
+                        <div class="quiz-option" data-answer="c">c) Compilación</div>
+                    </div>
+                    <div class="quiz-explanation" data-explanation-for="3" data-correct-answer="b">
+                        <p><strong>Explicación:</strong> La "Inferencia" es el término utilizado para describir el proceso en el que el LLM utiliza su conocimiento entrenado para generar una respuesta basada en el prompt de entrada.</p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 4 -->
+                <div class="quiz-question mb-6" data-question-id="4">
+                    <p class="text-lg font-semibold mb-3">4. ¿Qué es la "Context Window" en el funcionamiento de un LLM?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-answer="a">a) El tiempo que tarda el modelo en generar una respuesta.</div>
+                        <div class="quiz-option" data-answer="b">b) El tamaño máximo de texto que puede recibir el prompt.</div>
+                        <div class="quiz-option" data-answer="c">c) La cantidad de datos utilizada para entrenar el modelo.</div>
+                    </div>
+                    <div class="quiz-explanation" data-explanation-for="4" data-correct-answer="b">
+                        <p><strong>Explicación:</strong> La "Context Window" define la longitud máxima del prompt (y a veces la respuesta generada) que el LLM puede procesar en una sola interacción.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const quizContainer = document.getElementById('quiz-container');
+
+            quizContainer.addEventListener('click', (event) => {
+                const target = event.target;
+                if (target.classList.contains('quiz-option')) {
+                    const questionDiv = target.closest('.quiz-question');
+                    const questionId = questionDiv.dataset.questionId;
+                    const selectedAnswer = target.dataset.answer;
+                    const explanationDiv = document.querySelector(`.quiz-explanation[data-explanation-for="${questionId}"]`);
+                    const correctAnswer = explanationDiv.dataset.correctAnswer;
+
+                    // Remove previous selections and explanations for this question
+                    questionDiv.querySelectorAll('.quiz-option').forEach(option => {
+                        option.classList.remove('correct', 'incorrect');
+                    });
+                    explanationDiv.classList.remove('show');
+
+                    // Mark selected answer
+                    if (selectedAnswer === correctAnswer) {
+                        target.classList.add('correct');
+                    } else {
+                        target.classList.add('incorrect');
+                    }
+
+                    // Show explanation
+                    explanationDiv.classList.add('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
