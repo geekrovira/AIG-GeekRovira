@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IA Generativa - Introducción</title>
+    <title>IA Generativa - Introducción y Prompt Engineering</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -87,6 +87,7 @@
         <header class="text-center mb-12">
             <h1 class="text-5xl font-bold mb-4">IA Generativa: Hack the AI</h1>
             <p class="text-xl text-gray-400">// Sección 01: Introducción</p>
+            <p class="text-xl text-gray-400">// Sección 02: Prompt Engineering</p>
         </header>
 
         <section class="card">
@@ -121,7 +122,7 @@
 
         <section class="card">
             <h2 class="text-3xl font-semibold mb-4">Cuestionario: Introducción a la IA Generativa</h2>
-            <div id="quiz-container">
+            <div id="quiz-container-section1">
                 <!-- Pregunta 1 -->
                 <div class="quiz-question mb-6" data-question-id="1">
                     <p class="text-lg font-semibold mb-3">1. ¿Cuál es el principal impacto que los LLMs están causando en la sociedad?</p>
@@ -175,38 +176,129 @@
                 </div>
             </div>
         </section>
+
+        <section class="card">
+            <h2 class="text-3xl font-semibold mb-4">Sección 02: Prompt Engineering</h2>
+            <p class="mb-4">El <strong class="text-green-400">"Prompt Engineering"</strong> se refiere a la práctica especializada de generar y diseñar instrucciones o "prompts" efectivos para comunicarse de manera correcta y eficiente con los Modelos de Lenguaje Grandes (LLMs).</p>
+
+            <h3 class="text-2xl font-semibold mb-3 mt-6">Framework para generar un Prompt:</h3>
+            <ul class="list-disc list-inside ml-4 mb-4">
+                <li><strong>Idea o problema a resolver:</strong> Definir claramente el objetivo de nuestra interacción con el LLM.</li>
+                <li><strong>Análisis e implementación del prompt:</strong> Diseñar el prompt considerando los principios y técnicas de ingeniería de prompts.</li>
+                <li><strong>Resultados experimentales:</strong> Probar el prompt y observar las respuestas generadas por el LLM.</li>
+                <li><strong>Análisis de errores y resultados:</strong> Evaluar la calidad de la respuesta, identificar posibles fallos y refinar el prompt si es necesario.</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold mb-3 mt-6">Principios de Prompt Engineering:</h3>
+            <p class="mb-4">Uno de los principios fundamentales es que las instrucciones proporcionadas al modelo deben ser lo más <strong class="text-green-400">claras y específicas</strong> posible. Esto ayuda al LLM a entender exactamente lo que se espera de él.</p>
+            <p class="mb-4">Para lograr esta claridad y especificidad, es crucial utilizar <strong class="text-green-400">delimitadores</strong>. Estos no solo ayudan a organizar y separar las diferentes partes de la instrucción, sino que también son vitales para evitar problemas de seguridad como las "Prompt Injections" (inyecciones de prompt), donde un usuario malintencionado podría intentar manipular el comportamiento del modelo.</p>
+            <p class="mb-4">Algunos delimitadores comunes incluyen:</p>
+            <ul class="list-disc list-inside ml-4">
+                <li>Comillas triples: <code class="bg-gray-700 p-1 rounded">"""</code> (tres comillas dobles)</li>
+                <li>Comillas triples simples: <code class="bg-gray-700 p-1 rounded">'''</code> (tres comillas simples)</li>
+                <li>Triples guiones: <code class="bg-gray-700 p-1 rounded">---</code></li>
+                <li>Corchetes angulares: <code class="bg-gray-700 p-1 rounded">&lt;&gt;</code></li>
+                <li>Tags XML: <code class="bg-gray-700 p-1 rounded">&lt;tag&gt; &lt;/tag&gt;</code></li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2 class="text-3xl font-semibold mb-4">Cuestionario: Prompt Engineering</h2>
+            <div id="quiz-container-section2">
+                <!-- Pregunta 1 -->
+                <div class="quiz-question mb-6" data-question-id="5">
+                    <p class="text-lg font-semibold mb-3">1. ¿Qué es el "Prompt Engineering"?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-answer="a">a) El proceso de entrenamiento de un LLM.</div>
+                        <div class="quiz-option" data-answer="b">b) La práctica de diseñar instrucciones efectivas para LLMs.</div>
+                        <div class="quiz-option" data-answer="c">c) La optimización del hardware para LLMs.</div>
+                    </div>
+                    <div class="quiz-explanation" data-explanation-for="5" data-correct-answer="b">
+                        <p><strong>Explicación:</strong> El Prompt Engineering se centra en cómo formulamos las instrucciones (prompts) para obtener las mejores respuestas de un LLM.</p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="quiz-question mb-6" data-question-id="6">
+                    <p class="text-lg font-semibold mb-3">2. ¿Cuál de los siguientes NO es un componente del framework para generar un prompt?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-answer="a">a) Análisis de errores y resultados.</div>
+                        <div class="quiz-option" data-answer="b">b) Diseño de la interfaz gráfica del usuario.</div>
+                        <div class="quiz-option" data-answer="c">c) Idea o problema a resolver.</div>
+                    </div>
+                    <div class="quiz-explanation" data-explanation-for="6" data-correct-answer="b">
+                        <p><strong>Explicación:</strong> El framework se enfoca en la formulación y evaluación del prompt, no en el diseño de interfaces.</p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div class="quiz-question mb-6" data-question-id="7">
+                    <p class="text-lg font-semibold mb-3">3. ¿Para qué se utilizan los delimitadores en el prompt engineering?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-answer="a">a) Para hacer el prompt más corto.</div>
+                        <div class="quiz-option" data-answer="b">b) Para hacer las instrucciones más claras y evitar problemas de seguridad.</div>
+                        <div class="quiz-option" data-answer="c">c) Para aumentar la Context Window del LLM.</div>
+                    </div>
+                    <div class="quiz-explanation" data-explanation-for="7" data-correct-answer="b">
+                        <p><strong>Explicación:</strong> Los delimitadores ayudan a separar y estructurar las instrucciones, mejorando la claridad y protegiendo contra ataques como las "Prompt Injections".</p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 4 -->
+                <div class="quiz-question mb-6" data-question-id="8">
+                    <p class="text-lg font-semibold mb-3">4. ¿Cuál de los siguientes es un ejemplo de delimitador?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-answer="a">a) Paréntesis ( )</div>
+                        <div class="quiz-option" data-answer="b">b) Comillas triples """</div>
+                        <div class="quiz-option" data-answer="c">c) Signo de exclamación !</div>
+                    </div>
+                    <div class="quiz-explanation" data-explanation-for="8" data-correct-answer="b">
+                        <p><strong>Explicación:</strong> Las comillas triples (ya sean dobles o simples) son un delimitador comúnmente usado para encapsular instrucciones o bloques de texto en los prompts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const quizContainer = document.getElementById('quiz-container');
+            // Function to handle quiz logic
+            const setupQuiz = (containerId) => {
+                const quizContainer = document.getElementById(containerId);
 
-            quizContainer.addEventListener('click', (event) => {
-                const target = event.target;
-                if (target.classList.contains('quiz-option')) {
-                    const questionDiv = target.closest('.quiz-question');
-                    const questionId = questionDiv.dataset.questionId;
-                    const selectedAnswer = target.dataset.answer;
-                    const explanationDiv = document.querySelector(`.quiz-explanation[data-explanation-for="${questionId}"]`);
-                    const correctAnswer = explanationDiv.dataset.correctAnswer;
+                if (!quizContainer) return; // Exit if container not found
 
-                    // Remove previous selections and explanations for this question
-                    questionDiv.querySelectorAll('.quiz-option').forEach(option => {
-                        option.classList.remove('correct', 'incorrect');
-                    });
-                    explanationDiv.classList.remove('show');
+                quizContainer.addEventListener('click', (event) => {
+                    const target = event.target;
+                    if (target.classList.contains('quiz-option')) {
+                        const questionDiv = target.closest('.quiz-question');
+                        const questionId = questionDiv.dataset.questionId;
+                        const selectedAnswer = target.dataset.answer;
+                        const explanationDiv = document.querySelector(`.quiz-explanation[data-explanation-for="${questionId}"]`);
+                        const correctAnswer = explanationDiv.dataset.correctAnswer;
 
-                    // Mark selected answer
-                    if (selectedAnswer === correctAnswer) {
-                        target.classList.add('correct');
-                    } else {
-                        target.classList.add('incorrect');
+                        // Remove previous selections and explanations for this question
+                        questionDiv.querySelectorAll('.quiz-option').forEach(option => {
+                            option.classList.remove('correct', 'incorrect');
+                        });
+                        explanationDiv.classList.remove('show');
+
+                        // Mark selected answer
+                        if (selectedAnswer === correctAnswer) {
+                            target.classList.add('correct');
+                        } else {
+                            target.classList.add('incorrect');
+                        }
+
+                        // Show explanation
+                        explanationDiv.classList.add('show');
                     }
+                });
+            };
 
-                    // Show explanation
-                    explanationDiv.classList.add('show');
-                }
-            });
+            // Setup quizzes for each section
+            setupQuiz('quiz-container-section1');
+            setupQuiz('quiz-container-section2');
         });
     </script>
 </body>
